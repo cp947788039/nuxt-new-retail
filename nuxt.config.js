@@ -1,5 +1,3 @@
-const pkg = require('./package')
-
 module.exports = {
     mode: 'universal',
 
@@ -7,11 +5,20 @@ module.exports = {
     ** Headers of the page
     */
     head: {
-        title: pkg.name,
+        title: 'Nuxt web',
         meta: [
             { charset: 'utf-8' },
-            { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-            { hid: 'description', name: 'description', content: pkg.description }
+            { 'http-equiv': 'Content-Type', content: 'text/html; charset=utf-8' },
+            { name: 'renderer', content: 'webkit' },
+            { name: 'viewport', content: 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' },
+            { name: 'apple-mobile-web-app-capable', content: 'yes' },
+            { name: 'apple-mobile-web-app-status-bar-style', content: 'black' },
+            { name: 'format-detection', content: 'telephone=no' },
+            { 'http-equiv': 'pragma', content: 'no-cache' },
+            { name: 'msapplication-tap-highlight', content: 'no' },
+            { name: 'author', content: 'author' },
+            { name: 'keywords', content: 'keywords', hid: "keywords"},
+            { name: 'description', content: 'description', hid: "description"},
         ],
         link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
     },
@@ -25,10 +32,10 @@ module.exports = {
     ** Global CSS
     */
     css: [
-        '~static/css/reset.css',
+        '@/static/css/reset.css',
         'element-ui/lib/theme-chalk/index.css',
-        '~assets/less/element-ui.less',
-        '~assets/less/main.less'
+        '@/assets/less/element-ui.less',
+        '@/assets/less/main.less'
     ],
 
     /*
@@ -58,7 +65,7 @@ module.exports = {
     ** Build configuration
     */
     build: {
-        /* transpile: [/^element-ui/], */
+        transpile: [/^element-ui/],
         vendor: ['element-ui'],
 
         /*
@@ -68,7 +75,7 @@ module.exports = {
             const sassResourcesLoader = {
                 loader: 'sass-resources-loader',
                 options: {
-                    resources: ['~assets/less/element-ui.less','~assets/less/main.less']
+                    resources: ['@/assets/less/element-ui.less','~assets/less/main.less']
                 }
             }
             config.module.rules.forEach(rule => {

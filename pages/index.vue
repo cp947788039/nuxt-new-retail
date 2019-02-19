@@ -1,92 +1,41 @@
+<style lang="less" scoped>
+</style>
 <template>
-<section class="container">
-    <div>
-        <logo />
-        <h1 class="title">
-            nuxt-new-retail
-        </h1>
-        <h2 class="subtitle">
-            Based on nuxt project
-        </h2>
-        <div class="links">
-            <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green"
-        >Documentation</a>
-            <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey"
-        >GitHub</a>
-        </div>
-        <el-button type="success" @click="hello">您好</el-button>
-    </div>
-</section>
+<div>
+    <h1>Home</h1>
+    <el-button type="danger" @click="home">默认按钮</el-button>
+    <el-button type="success" @click="open">点击打开 Message Box {{name}}</el-button>
+</div>
 </template>
 
 <script>
-import Logo from '@/components/Logo.vue'
-import api from '@/plugins/api'
 export default {
-    components: {
-        Logo
+    head() {
+        return {
+            title: "Index",
+            meta: [{
+                    name: "keywords",
+                    content: "index"
+                },
+                {
+                    name: "description",
+                    content: "index"
+                }
+            ]
+        };
     },
-    asyncData() {
-        /* return api.companyList({
-            appjson:true,
-
-        }).then( res => {
-            console.log(222)
-        }) */ 
-        
+    data() {
+        return {
+            name:'jack',
+        }
     },
     methods: {
-        hello() {
-            console.log(this.$config.baseApi)
-            this.$tip.alert({
-                message:'您错了'
-            });
-            this.$api.companyList({
-                appjson:true,
-
-            }).then( res => {
-
-            })
+        home() {
+            console.log('home')
+        },
+        open() {
+            console.log('444444444444')
         }
     }
-}
+};
 </script>
-
-<style>
-.container {
-    margin: 0 auto;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-.title {
-    font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-        'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-    display: block;
-    font-weight: 300;
-    font-size: 100px;
-    color: #35495e;
-    letter-spacing: 1px;
-}
-
-.subtitle {
-    font-weight: 300;
-    font-size: 42px;
-    color: #526488;
-    word-spacing: 5px;
-    padding-bottom: 15px;
-}
-
-.links {
-    padding-top: 15px;
-}
-</style>
