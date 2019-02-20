@@ -1,18 +1,18 @@
 <style lang="less" scoped>
+
 </style>
 <template>
 <div class="section">
-    <banners></banners>
-    <div class="row main">
-        <h1>Home</h1>
-        <el-button type="primary" @click="clickMe">请点击我</el-button>
+    <slideshow :slideH="slideH" :imgArr="imgArr"></slideshow>
+    <div class="main">
+       
     </div>
 </div>
 </template>
 
 <script>
 import api from '@/plugins/api'
-import banners from '@/components/banners'
+import slideshow from '@/components/slideshow'
 export default {
     head() {
         return {
@@ -29,18 +29,25 @@ export default {
         };
     },
     components: {
-        banners,
+        slideshow,
     },
     data() {
         return {
-            name:'jack',
+            slideH: '6.5rem',
+            imgArr: [
+                {src:'/images/slideshow/slideshow-01.jpg',alt:'01'},
+                {src:'/images/slideshow/slideshow-02.jpg',href:'/',alt:'02'},
+                {src:'/images/slideshow/slideshow-03.jpg',href:'/',alt:'03'},
+                {src:'/images/slideshow/slideshow-04.jpg',href:'/',alt:'04'}
+            ],
         }
-    },
+    }, 
     methods: {
         clickMe() {
             this.$tip.alert({
                 message:'元宵节快乐，开心嘛!'
             })
+            console.log($('body').html())
         },
     }
 };

@@ -20,7 +20,15 @@ module.exports = {
             { name: 'keywords', content: 'keywords', hid: "keywords"},
             { name: 'description', content: 'description', hid: "description"},
         ],
-        link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+        link: [
+            { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+            { rel: 'stylesheet', type: 'text/css', href: '/css/reset.css'},
+            { rel: 'stylesheet', type: 'text/css', href: '/css/animate.min.css'},
+        ],
+        script: [
+            {src:'/js/jquery-2.1.4.min.js'},
+            {src:'/js/flexible.js'},
+        ],
     },
 
     /*
@@ -32,7 +40,6 @@ module.exports = {
     ** Global CSS
     */
     css: [
-        '@/static/css/reset.css',
         'element-ui/lib/theme-chalk/index.css',
         '@/assets/less/element-ui.less',
         '@/assets/less/main.less'
@@ -75,7 +82,7 @@ module.exports = {
             const sassResourcesLoader = {
                 loader: 'sass-resources-loader',
                 options: {
-                    resources: ['@/assets/less/element-ui.less','~assets/less/main.less']
+                    resources: ['@/assets/less/element-ui.less','@/assets/less/main.less']
                 }
             }
             config.module.rules.forEach(rule => {
@@ -87,14 +94,14 @@ module.exports = {
                 }
             })
             // Run ESLint on save
-            if (ctx.isDev && ctx.isClient) {
-                /* config.module.rules.push({
+            /* if (ctx.isDev && ctx.isClient) {
+                config.module.rules.push({
                   enforce: 'pre',
                   test: /\.(js|vue)$/,
                   loader: 'eslint-loader',
                   exclude: /(node_modules)/
-                }) */
-            }
+                })
+            } */
         }
     }
 }

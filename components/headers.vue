@@ -1,13 +1,13 @@
 <style lang="less" scoped>
 .header{
-	background:#2c3840;
+	width: 100%;
+	height: 60px;
+	background: #2d2a33;
 }
 </style>
 <template>
 <div class="header">
-	<div class="row">
-		<navs></navs>
-	</div>
+	<navs></navs>
 </div>
 </template>
 <script>

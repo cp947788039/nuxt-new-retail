@@ -19,6 +19,7 @@ html {
     font-family: sans-serif;
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
+    font-size: 100px;
 }
 
 address, caption, cite, code, dfn, em, th, var {
@@ -71,11 +72,11 @@ a, area {
 a {
     text-decoration: none;
     cursor: pointer;
+    outline: none;
 }
 
 a:hover {
-    text-decoration: underline;
-    outline: none;
+    color: #fdd10d;
 }
 
 a.ie6:hover {
