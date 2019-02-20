@@ -3,7 +3,7 @@
 </style>
 <template>
 <div class="section">
-    <slideshow :slideH="slideH" :imgArr="imgArr"></slideshow>
+    <slideshow :slideH="'6.5rem'" :effect="'fade'" :imgArr="imgArr"></slideshow>
     <div class="main">
        
     </div>
@@ -33,7 +33,6 @@ export default {
     },
     data() {
         return {
-            slideH: '6.5rem',
             imgArr: [
                 {src:'/images/slideshow/slideshow-01.jpg',alt:'01'},
                 {src:'/images/slideshow/slideshow-02.jpg',href:'/',alt:'02'},

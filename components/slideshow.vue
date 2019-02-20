@@ -101,6 +101,10 @@ export default {
 			type: String,
 			default: '4.5rem',
 		},
+		effect: {
+			type: String,
+			default: 'fade',
+		},
 		// 参数说明：[{src:'',href:'',alt:''}]，如果没有href参数，则不会显示a标签
 		imgArr: {
 			type: Array,
@@ -111,7 +115,6 @@ export default {
 	},
 	data() {
 		return {
-			effect: 'fade',
 			autoPlay: true,
 			interTime: 6000,
 			defaultIndex: 0,
