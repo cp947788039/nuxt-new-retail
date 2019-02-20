@@ -83,7 +83,7 @@
     }
     win.addEventListener('resize', function () {
         clearTimeout(tid);
-        tid = setTimeout(refreshRem, 300);
+        tid = setTimeout(refreshRem, 50);
     }, false);
     refreshRem();
     flexible.dpr = win.dpr = dpr;

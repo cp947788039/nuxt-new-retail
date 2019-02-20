@@ -28,6 +28,7 @@ module.exports = {
         script: [
             {src:'/js/jquery-2.1.4.min.js'},
             {src:'/js/flexible.js'},
+            {src:'/js/hammer.js'},
         ],
     },
 
