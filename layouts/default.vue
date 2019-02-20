@@ -1,16 +1,16 @@
-<style lang="scss" scoped>
+<style lang="less" scoped>
 
 </style>
 <template>
-  	<div>
+  	<div class="container">
 		<headers></headers>
     	<nuxt/>
     	<footers></footers>
   	</div> 
 </template>
 <script>
-import headers from '../components/headers';
-import footers from '../components/footers';
+import headers from '@/components/headers';
+import footers from '@/components/footers';
 export default {
  	components:{
  		headers,

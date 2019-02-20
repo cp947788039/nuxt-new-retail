@@ -1,14 +1,18 @@
 <style lang="less" scoped>
 </style>
 <template>
-<div>
-    <h1>Home</h1>
-    <el-button type="danger" @click="home">默认按钮</el-button>
-    <el-button type="success" @click="open">点击打开 Message Box {{name}}</el-button>
+<div class="section">
+    <banners></banners>
+    <div class="row main">
+        <h1>Home</h1>
+        <el-button type="primary" @click="clickMe">请点击我</el-button>
+    </div>
 </div>
 </template>
 
 <script>
+import api from '@/plugins/api'
+import banners from '@/components/banners'
 export default {
     head() {
         return {
@@ -24,18 +28,20 @@ export default {
             ]
         };
     },
+    components: {
+        banners,
+    },
     data() {
         return {
             name:'jack',
         }
     },
     methods: {
-        home() {
-            console.log('home')
+        clickMe() {
+            this.$tip.alert({
+                message:'元宵节快乐，开心嘛!'
+            })
         },
-        open() {
-            console.log('444444444444')
-        }
     }
 };
 </script>
