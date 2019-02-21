@@ -15,11 +15,26 @@
 		}
 		li{
 			transition: all 1s ease-in-out;
-		}
-		img{
-			width: 100%;
-			height: auto;
-			display: block;
+			img{
+				width: 100%;
+				height: auto;
+				display: block;
+			}
+			&.noImg{
+				position: relative;
+				background: #e9e9e9;
+				img{
+					width: auto;
+					height: 60%;
+					position: absolute;
+					left: 0;
+					right: 0;
+					top: 0;
+					bottom: 0;
+					margin: auto;
+					z-index: 10;
+				}
+			}
 		}
 	}
 	.slidelist{
@@ -79,9 +94,11 @@
 <div class="slidebox" :style="{height:slideH}" @mouseenter="mouseenter" @mouseleave="mouseleave">
 	<div class="slideshow">
 		<ul>
-			<li v-for="(item,index) in imgArr" :key="index">
-				<a :href="item.href" v-if="item.href"><img :src="item.src" :alt="item.alt"></a>
-				<img :src="item.src" :alt="item.alt" v-else>
+			<li v-for="(item,index) in imgArr" :key="index" :class="{'noImg':!item.src}">
+				<a :href="item.href" v-if="item.href">
+					<img :src="item.src | imgBaseUrl" :alt="item.alt" >
+				</a>
+				<img :src="item.src | imgBaseUrl" :alt="item.alt" v-else>
 			</li>
 		</ul>
 	</div>
@@ -92,9 +109,11 @@
 			<li v-for="(item,index) in imgArr" :key="index" @click="showDot(index)"></li>
 		</ul>
 	</div>
+	
 </div>
 </template>
 <script>
+import api from '@/plugins/api'
 export default {
 	props: {
 		slideH: {
@@ -222,4 +241,4 @@ export default {
 		},
 	},
 }
-</script>
+</script> 

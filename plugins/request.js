@@ -4,6 +4,7 @@ import qs from 'qs'
 import config from '@/plugins/config'
 import tip from '@/plugins/tip'
 import util from '@/plugins/util'
+import filter from '@/plugins/filter'
 // 创建axios实例
 const service = axios.create({
     baseURL: config.baseApi,
