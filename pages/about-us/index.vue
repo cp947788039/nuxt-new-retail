@@ -2,8 +2,7 @@
 </style>
 <template>
 <div>
-    <h1>About us</h1>
-    <el-button>haha</el-button>
+    <h1>公司概况</h1>
 </div>
 </template>
 
@@ -11,16 +10,16 @@
 export default {
     head() {
         return {
-            title: "About Us",
+            title: "公司概况",
             meta: [{
 					hid: "keywords",
                     name: "keywords",
-                    content: "about,us"
+                    content: "公司概况"
                 },
                 {
 					hid: "description",
 					name: "description",
-                    content: "about us"
+                    content: "公司概况"
                 }
             ]
         };

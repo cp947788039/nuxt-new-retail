@@ -50,8 +50,9 @@ module.exports = {
     ** Plugins to load before mounting the App
     */
     plugins: [
-        '@/plugins/element-ui',
-        '@/plugins/api',
+        {src:'@/plugins/element-ui', ssr:false },
+        {src:'@/plugins/api', ssr:false },
+        {src:'@/plugins/loading', ssr:false },
     ],
 
     /*

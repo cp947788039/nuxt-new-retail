@@ -1,7 +1,7 @@
 <style lang="less" scoped>
 .footer{
 	width:100%;
-	background:#2c3840;
+	background:#2d2a33;
 	color:#fff;
 	padding:10px 0;
 	position: fixed;
@@ -13,12 +13,26 @@
 <template>
 <div class="footer">
 	<div class="row text-center">
-		copyright
+		{{year}} © 星家加版权所有.
 	</div>
 </div>
 </template>
 <script>
 export default {
- 
+	data() {
+		return {
+			year:2018,
+		}
+	},
+	created() {
+		// 计算获取当前的年份
+		this.calc();
+	},
+	methods: {
+		calc() {
+			const date = new Date();
+			this.year = date.getFullYear();
+		},
+	},
 }
 </script>

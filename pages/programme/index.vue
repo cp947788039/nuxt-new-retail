@@ -2,23 +2,23 @@
 
 </style>
 <template>
-<h1>Contact us</h1>
+<h1>解决方案</h1>
 </template>
 
 <script>
 export default {
     head() {
         return {
-            title: 'Contact Us',
+            title: '解决方案',
             meta: [{
                     hid: 'keywords',
                     name: 'keywords',
-                    content: 'contact,us'
+                    content: '解决方案'
                 },
                 {
                     hid: 'description',
                     name: 'description',
-                    content: 'contact us'
+                    content: '解决方案'
                 },
             ]
         }

@@ -2,16 +2,16 @@
 
 </style>
 <template>
-    <h1>News</h1>
+    <h1>新闻发布室</h1>
 </template>
 <script>
 export default {
   head() {
       return {
-          title: 'News',
+          title: '新闻发布室',
           meta: [
-              {name: 'keywords',content:'news'},
-              {name: 'description',content:'news'},
+              {name: 'keywords',content:'新闻发布室'},
+              {name: 'description',content:'新闻发布室'},
           ]
       }
   }

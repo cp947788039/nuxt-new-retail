@@ -5,25 +5,24 @@
 <div class="section">
     <slideshow :slideH="'6.5rem'" :effect="'fade'" :imgArr="imgArr"></slideshow>
     <div class="main">
-
+        {{age | uppercase}}
     </div>
 </div>
 </template>
-
 <script>
 import api from '@/plugins/api'
 import slideshow from '@/components/slideshow'
 export default {
     head() {
         return {
-            title: "Index",
+            title: "首页",
             meta: [{
                     name: "keywords",
-                    content: "index"
+                    content: "首页"
                 },
                 {
                     name: "description",
-                    content: "index"
+                    content: "首页"
                 }
             ]
         };
@@ -39,7 +38,7 @@ export default {
                 {src:'/images/slideshow/slideshow-03.jpg',href:'/',alt:'03'},
                 {src:'/images/slideshow/slideshow-04.jpg',href:'/',alt:'04'}
             ],
-     
+            age:'ss'
         }
     }, 
     methods: {
